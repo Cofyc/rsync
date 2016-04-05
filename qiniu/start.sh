@@ -18,5 +18,6 @@ chmod 600 rsyncd.secrets
 # for clients
 echo "$PASSWORD" > /etc/volume.secrets
 chmod 600 /etc/volume.secrets
+ln -sf $(pwd)/rsync /usr/local/bin/rsync
 
 exec ./rsync $RSYNC_OPTS
