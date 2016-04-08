@@ -20,4 +20,8 @@ echo "$PASSWORD" > /etc/volume.secrets
 chmod 600 /etc/volume.secrets
 ln -sf $(pwd)/rsync /usr/local/bin/rsync
 
+# clear pid files before start
+# FIX "failed to create pid file rsyncd.pid: File exists" error.
+rm *.pid
+
 exec ./rsync $RSYNC_OPTS
