@@ -22,6 +22,6 @@ ln -sf $(pwd)/rsync /usr/local/bin/rsync
 
 # clear pid files before start
 # FIX "failed to create pid file rsyncd.pid: File exists" error.
-rm *.pid
+rm -f *.pid
 
 exec ./rsync $RSYNC_OPTS
